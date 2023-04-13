@@ -6,5 +6,5 @@ COPY package*.json ./
 USER root
 RUN npm install
 COPY --chown=node:node . .
-EXPOSE 3000
-CMD [ "npm", "start" ]
+EXPOSE 5000
+ENTRYPOINT ["/bin/sh","-c","node ./bin/server.js"]
